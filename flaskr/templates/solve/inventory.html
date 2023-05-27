@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Solve{% endblock %}</h1>
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='checkbox.css') }}">
+{% endblock %}
+
+
+
+{% block content %}
+<!-- <label for="{{ name }}"> -->
+<form class="" id="main-form">
+
+<div class="content"></div>
+
+  <img src="data:;base64,{{ main_image }}" class="solve-main-image"/>
+
+
+
+<div class="content"></div>
+  <div class="cont-main">{% for name, image in options %}
+
+    <div class="cont-checkbox">
+      <input type="radio" name="myRadio" id="{{ name }}" class="option-radio"/>
+      <label for="{{ name }}">
+        <img
+        src="{{url_for('static', filename=image)}}"
+        />
+        <span class="cover-checkbox">
+          <svg viewBox="0 0 12 10">
+            <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+          </svg>
+        </span>
+        <div class="info">{{ name }}</div>
+      </label>
+    </div>{% endfor %}
+  </div>
+
+<div class="cont-main">
+  <input type="submit" name="submit" value="Submit" class="submit-button" >
+</div>
+
+</form>
+
+<script type="text/javascript">
+  const form = document.getElementById("main-form");
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();    // prevent page from refreshing
+    const formData = new FormData(form);  // grab the data inside the form fields
+    fetch('/', {   // assuming the backend is hosted on the same server
+        method: "POST",
+        body: formData,
+    }).then(function(response) {
+        // do something with the response if needed.
+        // If you want the table to be built only after the backend handles the request and replies, call buildTable() here.
+    });
+  });
+
+</script>
+
+{% endblock %}

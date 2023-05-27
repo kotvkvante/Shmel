@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Solve{% endblock %}</h1>
+
+{% endblock %}
+
+{% block content %}
+    <ul>
+      <li class="opt-elem">
+        <a class="action" href="{{ url_for('solve.pointto') }}">Point to</a>
+      </li>
+      <li class="opt-elem">
+        <a class="action" href="{{ url_for('solve.inventory') }}">Inventory</a>
+      </li>
+    </ul>
+
+{% endblock %}

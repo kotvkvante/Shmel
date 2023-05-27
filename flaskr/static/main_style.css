@@ -1,0 +1,68 @@
+html {
+  font-family: Courier New;
+  background: #132345;
+  padding: 1rem;
+}
+
+body {
+  min-width: 550px;
+  max-width: 960px;
+  margin: auto;
+  background: white;
+}
+
+* {
+  /* font-family: Lato; */
+  margin: 0;
+  padding: 0;
+  --transition: 0.15s;
+  --border-radius: 0.5rem;
+  --background: #ffc107;
+  --box-shadow: #ffc107;
+}
+
+input[type="file"] {
+  /* background-clip: unset; */
+    background-clip: border-box;
+    padding: 5px;margin-left:-5px;margin-top:-5px
+    /* display: none; */
+}
+
+/* input[type="file"] {
+  box-sizing:border-box;
+} */
+
+.custom-file-upload {
+  /* font-weight: bold; */
+  color: dodgerblue;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0 3px var(--background);
+}
+
+input[type="file"]::file-selector-button {
+  box-shadow: 0 0 0 3px var(--background);
+  border-radius: var(--border-radius);
+  background-color: white;
+}
+
+input[type="file"]::file-selector-button:hover {
+  box-shadow: 0 0 0 3px var(--background);
+  border-radius: var(--border-radius);
+  background-color: lightblue;
+}
+
+
+.submit-button {
+  background-color: white;
+  /* overflow: hidden; */
+  /* height: 100%; */
+  width: auto;
+  align-content: center;
+  box-shadow: 0 0 0 3px var(--background);
+  border-radius: var(--border-radius);
+}
+
+.submit-button:hover {
+  color: blue;
+  background-color: lightblue;
+}
