@@ -10,5 +10,5 @@ if __name__ == '__main__':
 
     print(type(h))
     print(h)
-    with open("mcid.css", "wb") as f:
+    with open(MCID_CSS_PATH, "wb") as f:
         f.write(h)
